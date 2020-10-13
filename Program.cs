@@ -31,6 +31,8 @@ namespace Goodson_Lab_3
                 }
 
                 //method so I don't have to keep asking if they want to play again
+                //Practiced these prior to bootcamp because I had too much free time on my hands :)
+
                 static bool continueGame()
                 {
                     string userPlay;
