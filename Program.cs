@@ -31,7 +31,7 @@ namespace Goodson_Lab_3
                 }
 
                 //method so I don't have to keep asking if they want to play again
-                //Practiced these prior to bootcamp because I had too much free time on my hands :)
+                //I practiced these and arrays/lists on edabit prior to bootcamp because I had too much free time on my hands :)
 
                 static bool continueGame()
                 {
@@ -43,11 +43,11 @@ namespace Goodson_Lab_3
                         Console.WriteLine($"\nWould you like to continue? Please enter 'y' for yes and 'n' for no:");
                         userPlay = Console.ReadLine();
 
-                        if (userPlay.Equals("y"))
+                        if (userPlay.ToLower().Equals("y"))
                         {
                             return false;
                         }
-                        else if (userPlay.Equals("n"))
+                        else if (userPlay.ToLower().Equals("n"))
                         {
                             return true;
                         }
@@ -61,7 +61,7 @@ namespace Goodson_Lab_3
 
                 }
 
-                //determine what will be output if userInput is positive integer
+                //determine what will be output if userInput is positive integer between 1 and 100
 
                 if (userNum % 2 != 0)
                 {
