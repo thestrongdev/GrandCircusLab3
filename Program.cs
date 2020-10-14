@@ -4,6 +4,36 @@ namespace Goodson_Lab_3
 {
     class Program
     {
+        //method so I don't have to keep asking if they want to play again
+        //I practiced these and arrays/lists on Edabit prior to bootcamp because I had too much free time on my hands :)
+
+        static bool continueGame()
+        {
+            string userPlay;
+            bool validInput = false;
+
+            while (validInput == false)
+            {
+                Console.WriteLine($"\nWould you like to continue? Please enter 'y' for yes and 'n' for no:");
+                userPlay = Console.ReadLine();
+
+                if (userPlay.ToLower().Equals("y"))
+                {
+                    return false;
+                }
+                else if (userPlay.ToLower().Equals("n"))
+                {
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Not a valid input. Please try again.");
+                    continue;
+                }
+            }
+            return true;
+
+        }
         static void Main(string[] args)
         {
             
@@ -21,44 +51,13 @@ namespace Goodson_Lab_3
                 Console.WriteLine($"\nHi, {userName}! Please enter an integer between 1 and 100: ");
                 string userInput = Console.ReadLine();
 
-                //validate user input first to make sure it's an positive integer
+                //validate user input first to make sure it's a positive integer
                 realInt = int.TryParse(userInput, out userNum);
 
                 if (userNum <= 0 || userNum > 100 || realInt == false)
                 {
                     Console.WriteLine($"\nSorry, {userName}, the number needs to be a positive whole number between 1 and 100");
                     continue;
-                }
-
-                //method so I don't have to keep asking if they want to play again
-                //I practiced these and arrays/lists on edabit prior to bootcamp because I had too much free time on my hands :)
-
-                static bool continueGame()
-                {
-                    string userPlay;
-                    bool validInput = false;
-
-                    while (validInput == false)
-                    {
-                        Console.WriteLine($"\nWould you like to continue? Please enter 'y' for yes and 'n' for no:");
-                        userPlay = Console.ReadLine();
-
-                        if (userPlay.ToLower().Equals("y"))
-                        {
-                            return false;
-                        }
-                        else if (userPlay.ToLower().Equals("n"))
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Not a valid input. Please try again.");
-                            continue;
-                        }
-                    }
-                    return true;
-
                 }
 
                 //determine what will be output if userInput is positive integer between 1 and 100
